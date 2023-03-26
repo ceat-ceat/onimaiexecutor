@@ -5,8 +5,8 @@
 -- http://www.computercraft.info/forums2/index.php?/user/12870-anavrins
 -- http://pastebin.com/GPzf9JSa
 -- Last update: April 17, 2017
-local twoPower = require(script.Parent.twoPower)
-local util = require(script.Parent.util)
+local twoPower = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.TwoPower)
+local util = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.Util)
 
 local bxor = bit32.bxor
 local band = bit32.band

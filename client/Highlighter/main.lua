@@ -63,7 +63,7 @@ local LastData: { [TextObject]: ObjectData } = {}
 local Cleanups: { [TextObject]: () -> () } = {}
 
 local Highlighter = {
-	defaultLexer = require(script.lexer),
+	defaultLexer = require(LOCATIONS.Modules.Highligher.Lexer),
 }
 
 function Highlighter.highlight(props: HighlightProps)

@@ -1,7 +1,7 @@
 local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
 
-local ECC = require(script.EllipticCurveCryptography)
+local ECC = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.Main)
 
 local HandshakeRemote = Players.LocalPlayer:WaitForChild("Handshake")
 

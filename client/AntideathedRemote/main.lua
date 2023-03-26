@@ -30,7 +30,7 @@ local localplayer = plrs.LocalPlayer
 local remoteevent = {}
 local existingremoteevents = {}
 
-local bindableevent = require(script.BindableEvent)
+local bindableevent = require(LOCATIONS.Modules.AntideathedRemote.BindableEvent)
 local isserver = runservice:IsServer()
 
 remoteevent.__index = remoteevent

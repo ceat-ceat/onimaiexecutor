@@ -1,6 +1,6 @@
 -- Arithmetic on the finite field of integers modulo p
 -- Where p is the finite field modulus
-local arith = require(script.Parent.arith)
+local arith = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.Arith)
 local add = arith.add
 local sub = arith.sub
 local addDouble = arith.addDouble
