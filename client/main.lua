@@ -34,12 +34,9 @@ local REMOTE_METHODS = {
 	Respawn = 4,
 	R6 = 5,
 }
+
 local TEXT_HIDE_TIME = 2
-
-local locations = loadstring(game:HttpGet("https://raw.githubusercontent.com/ceat-ceat/onimaiexecutor/main/locations.lua", true))()
 local modules = {}
-
-LOCATIONS = locations
 
 function require(location)
 	if modules[location] then
