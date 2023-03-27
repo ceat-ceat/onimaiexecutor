@@ -28,7 +28,7 @@ return {
                 Util = CLIENT_BASE .. "/EncryptedNetClient/EllipticCurveCryptography/modules/util.lua",
             }
         },
-    }
+    },
     ClientAssets = "https://www.roblox.com/library/12910385605/",
     ServerModule = "https://www.roblox.com/library/12910374025/"
 }
