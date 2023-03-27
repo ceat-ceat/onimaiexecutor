@@ -39,6 +39,7 @@ local TEXT_HIDE_TIME = 2
 local modules = {}
 
 function require(location)
+	print("require", location)
 	if modules[location] then
 		return modules[location]
 	end
