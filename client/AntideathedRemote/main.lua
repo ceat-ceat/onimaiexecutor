@@ -172,11 +172,7 @@ function remoteevent.new(name)
 		_Connections = {},
 	}, remoteevent)
 
-	print(1, typeof(new), new)
-	
 	existingremoteevents[name] = new
-
-	print(2, typeof(new), new)
 	
 	if isserver then
 		new._OnServerEvent = bindableevent.new("OnServerEvent")
@@ -189,7 +185,6 @@ function remoteevent.new(name)
 		new:Search()
 	end
 	
-	print(3, typeof(new), new)
 	return new
 end
 

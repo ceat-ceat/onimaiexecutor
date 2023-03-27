@@ -5,7 +5,7 @@ return {
     Main = CLIENT_BASE .. "/main.lua",
     Modules = {
         -- antideathedremote
-        AntideathedRemote = CLIENT_BASE .. "/AntideathedRemote/BindableEvent.lua",
+        AntideathedRemote = CLIENT_BASE .. "/AntideathedRemote/main.lua",
         BindableEvent = CLIENT_BASE .. "/AntideathedRemote/BindableEvent.lua",
 
         -- highlighter
