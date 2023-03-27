@@ -41,7 +41,6 @@ local TEXT_HIDE_TIME = 2
 local modules = {}
 local locations = loadstring(game:HttpGet("https://raw.githubusercontent.com/ceat-ceat/onimaiexecutor/main/locations.lua", true))()
 function require(name)
-	print("require", name)
 	if modules[name] then
 		return modules[name]
 	end
@@ -134,7 +133,8 @@ local encryptednet = require("EncryptedNetClient")
 local remote = require("AntideathedRemote")
 local highlighter = require("Highligher")
 
-local remoteevent = encryptednet.wrap(remote.new(encryptednet.remoteName))
+local r = remote.new(encryptednet.remoteName)
+local remoteevent = encryptednet.wrap(r)
 
 local gui = stuff.Main
 gui.Name = "onimaiExecutor"
