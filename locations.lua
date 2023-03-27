@@ -14,7 +14,7 @@ return {
         language = CLIENT_BASE .. "/Highlighter/language.lua",
         
         -- encryptednet
-        EncryptedNetClient = "/EncryptedNetClient/main.lua",
+        EncryptedNetClient = CLIENT_BASE .. "/EncryptedNetClient/main.lua",
         EllipticCurveCryptography = CLIENT_BASE .. "/EncryptedNetClient/EllipticCurveCryptography/main.lua",
         arith = CLIENT_BASE .. "/EncryptedNetClient/EllipticCurveCryptography/modules/arith.lua",
         chacha20 = CLIENT_BASE .. "/EncryptedNetClient/EllipticCurveCryptography/modules/chacha20.lua",
