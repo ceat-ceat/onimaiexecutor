@@ -110,7 +110,7 @@ function bindableevent:Fire(...)
 end
 
 function bindableevent:Destroy()
-	for _, c in self.Event.Connections do
+	for _, c in next, self.Event.Connections do
 		c:Disconnect()
 	end
 end

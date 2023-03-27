@@ -89,7 +89,7 @@ function Wrap(Remote)
 	-- Destroy
 
 	function Wrapper:Destroy()
-		for _, Connection in Wrapper.Connections do
+		for _, Connection in next, Wrapper.Connections do
 			Connection:Disconnect()
 		end
 

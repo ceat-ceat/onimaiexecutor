@@ -2,7 +2,8 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
 
--- lack of interp strings here cus krnl doesnt support them yet
+-- lack of interp strings and the use of next is cus some exploits dont
+-- support luau, so i have to use vanilla lua
 
 local plrs = game:GetService("Players")
 local runservice = game:GetService("RunService")
@@ -107,7 +108,7 @@ dismissclicked = preloadgui.Frame.Box.Dismiss.MouseButton1Click:Connect(function
 end)
 
 function getinitremote()
-	for _, v in rs:GetChildren() do
+	for _, v in next, rs:GetChildren() do
 		if not v:IsA("RemoteEvent") then
 			continue
 		end

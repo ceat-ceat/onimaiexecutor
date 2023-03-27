@@ -133,7 +133,7 @@ function Highlighter.highlight(props: HighlightProps)
 			LastData[textObject] = nil
 			Cleanups[textObject] = nil
 
-			for _, connection in connections do
+			for _, connection in next, connections do
 				connection:Disconnect()
 			end
 			table.clear(connections)

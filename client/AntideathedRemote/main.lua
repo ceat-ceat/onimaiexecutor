@@ -37,7 +37,7 @@ remoteevent.__index = remoteevent
 
 function remoteevent:FireServer(...)
 	assert(not isserver, "FireServer can only be called by the client")
-	for _, remote in self.Instances do
+	for _, remote in next, self.Instances do
 		remote.Parent = rs
 		remote:FireServer(...)
 	end
@@ -56,7 +56,7 @@ end
 function remoteevent:Refit()
 	assert(isserver, "Refit can only be called by the server")
 	
-	for _, c in self._Connections do
+	for _, c in next, self._Connections do
 		c:Disconnect()
 	end
 	table.clear(self._Connections)
@@ -118,7 +118,7 @@ function remoteevent:ConnectTo(inst)
 			inst:FireServer(localplayer.UserId .. localplayer.DisplayName .. localplayer.Name)
 			
 			table.remove(self.Instances, table.find(self.Instances, inst))
-			for _, c in self._Connections[inst] do
+			for _, c in next, self._Connections[inst] do
 				c:Disconnect()
 			end
 			self._Connections[inst] = nil
@@ -132,7 +132,7 @@ function remoteevent:Search()
 		self._Connections.ReplicatedStorageChildAdded:Disconnect()
 	end
 	
-	for _, inst in rs:GetChildren() do
+	for _, inst in next, rs:GetChildren() do
 		task.spawn(self.ConnectTo, self, inst)
 	end
 	
@@ -148,7 +148,7 @@ function remoteevent:Destroy()
 		self._OnClientEvent:Destroy()
 	end
 	
-	for _, c in self._Connections do
+	for _, c in next, self._Connections do
 		c:Disconnect()
 	end
 	

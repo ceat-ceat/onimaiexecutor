@@ -94,7 +94,7 @@ local lua_matches = {
 
 -- To reduce the amount of table indexing during lexing, we separate the matches now
 local PATTERNS, TOKENS = {}, {}
-for i, m in lua_matches do
+for i, m in next, lua_matches do
 	PATTERNS[i] = m[1]
 	TOKENS[i] = m[2]
 end
