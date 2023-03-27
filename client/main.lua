@@ -46,7 +46,7 @@ function require(name)
 		return modules[name]
 	end
 
-	modules[name] = loadstring(game:HttpGet(locations[name], true))()
+	modules[name] = loadstring(game:HttpGet(locations.Modules[name], true))()
 	return modules[name]
 end
 
