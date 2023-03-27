@@ -22,10 +22,12 @@ function Wrap(Remote)
 		local encryptedData = ECC.encrypt(data, sharedSecret)
 		local signature = ECC.sign(clientPrivate, data)
 
+		print(Remote, Remote.FireServer)
 		return Remote:FireServer(encryptedData, signature)
 	end
 
 	function Wrapper:Connect(callback)
+		print(Remote, Remote.OnClientEvent)
 		local OnClientEvent = Remote.OnClientEvent:Connect(function(encryptedData, signature)
 			-- Metatables get lost in transit
 			setmetatable(encryptedData, ECC._byteMetatable)
