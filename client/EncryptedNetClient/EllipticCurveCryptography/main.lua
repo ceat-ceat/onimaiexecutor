@@ -1,10 +1,10 @@
 -- Elliptic Curve Cryptography in Computercraft
-local util = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.Util)
-local sha256 = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.Sha256)
-local chacha20 = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.ChaCha20)
-local random = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.Random)
-local modq = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.ModQ)
-local curve = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.Curve)
+local util = require("util")
+local sha256 = require("sha256")
+local chacha20 = require("chacha20")
+local random = require("random")
+local modq = require("modq")
+local curve = require("curve")
 
 local function getNonceFromEpoch()
 	local nonce = table.create(12)

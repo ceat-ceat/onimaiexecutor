@@ -1,6 +1,6 @@
 -- Big integer arithmetic for 168-bit (and 336-bit) numbers
 -- Numbers are represented as little-endian tables of 24-bit integers
-local twoPower = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.TwoPower)
+local twoPower = require("twoPower")
 
 local function isEqual(a, b)
 	return a[1] == b[1]

@@ -23,10 +23,10 @@
 -- Invalid Curve Twist Security? No: Don't use single coordinate ladders.
 -- Completeness? Yes: The curve is complete.
 -- Indistinguishability? Yes (Elligator 2), but not implemented.
-local util = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.Util)
-local arith = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.Arith)
-local modp = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.ModP)
-local modq = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.ModQ)
+local util = require("util")
+local arith = require("arith")
+local modp = require("modp")
+local modq = require("modq")
 
 local isEqual = arith.isEqual
 local NAF = arith.NAF

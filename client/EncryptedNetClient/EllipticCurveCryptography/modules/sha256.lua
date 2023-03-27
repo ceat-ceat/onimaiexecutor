@@ -5,8 +5,8 @@
 -- http://www.computercraft.info/forums2/index.php?/user/12870-anavrins
 -- http://pastebin.com/6UV4qfNF
 -- Last update: October 10, 2017
-local twoPower = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.TwoPower)
-local util = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.Util)
+local twoPower = require("twoPower")
+local util = require("util")
 
 local mod32 = 2 ^ 32
 local band = bit32.band

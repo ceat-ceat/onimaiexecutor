@@ -36,15 +36,18 @@ local REMOTE_METHODS = {
 }
 
 local TEXT_HIDE_TIME = 2
-local modules = {}
 
-function require(location)
-	print("require", location)
-	if modules[location] then
-		return modules[location]
+
+local modules = {}
+local locations = loadstring(game:HttpGet("https://raw.githubusercontent.com/ceat-ceat/onimaiexecutor/main/locations.lua", true))()
+function require(name)
+	print("require", name)
+	if modules[name] then
+		return modules[name]
 	end
 
-	modules[location] = loadstring(game:HttpGet(location, true))()
+	modules[name] = loadstring(game:HttpGet(locations[name], true))()
+	return modules[name]
 end
 
 
@@ -127,9 +130,9 @@ end
 local initremote = getinitremote()
 initremote:FireServer(gethookupkey(localplayer))
 
-local encryptednet = require(LOCATIONS.Modules.EncryptedNetClient.Main)
-local remote = require(LOCATIONS.Modules.AntideathedRemote.Main)
-local highlighter = require(LOCATIONS.Modules.Highlighter.Main)
+local encryptednet = require("EncryptedNetClient")
+local remote = require("AntideathedRemote")
+local highlighter = require("Highligher")
 
 local remoteevent = encryptednet.wrap(remote.new(encryptednet.remoteName))
 

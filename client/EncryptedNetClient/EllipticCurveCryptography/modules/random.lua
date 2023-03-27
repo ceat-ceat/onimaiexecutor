@@ -1,5 +1,5 @@
 -- random.lua - Random Byte Generator
-local sha256 = require(LOCATIONS.Modules.EncryptedNetClient.EllipticCurveCryptography.Sha256)
+local sha256 = require("sha256")
 
 local entropy = ""
 local accumulator, accumulator_len = {}, 0
