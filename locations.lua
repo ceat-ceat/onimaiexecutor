@@ -24,8 +24,8 @@ return {
                 ModQ = CLIENT_BASE .. "/EncryptedNetClient/EllipticCurveCryptography/modules/modq.lua",
                 Random = CLIENT_BASE .. "/EncryptedNetClient/EllipticCurveCryptography/modules/random.lua",
                 Sha256 = CLIENT_BASE .. "/EncryptedNetClient/EllipticCurveCryptography/modules/sha256.lua",
-                TwoPower = CLIENT_BASE .. "/EncryptedNetClient/EllipticCurveCryptography/modules/twoPower.lua",,
-                Util = CLIENT_BASE .. "/EncryptedNetClient/EllipticCurveCryptography/modules/util.lua"
+                TwoPower = CLIENT_BASE .. "/EncryptedNetClient/EllipticCurveCryptography/modules/twoPower.lua",
+                Util = CLIENT_BASE .. "/EncryptedNetClient/EllipticCurveCryptography/modules/util.lua",
             }
         },
     }
