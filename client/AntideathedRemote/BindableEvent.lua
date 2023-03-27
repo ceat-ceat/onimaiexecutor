@@ -101,7 +101,7 @@ function bindableevent:Fire(...)
 	local params = {...}
 	
 	for _, connection in next, self.Event.Connections do
-		spawn(function()
+		task.spawn(function()
 			connection.Callback(unpack(params))
 		end)
 	end

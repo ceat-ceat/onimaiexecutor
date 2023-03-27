@@ -13,6 +13,8 @@ local sharedSecret = ECC.exchange(clientPrivate, serverPublic)
 function Wrap(Remote)
 	local Wrapper = setmetatable({ Connections = {} }, { __index = Remote })
 
+	print(Remote)
+
 	-- Event
 
 	function Wrapper:SendToServer(...)

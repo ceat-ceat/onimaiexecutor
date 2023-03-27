@@ -85,7 +85,7 @@ function remoteevent:Refit()
 	end)
 	
 	self._Connections.OnServerEvent = new.OnServerEvent:Connect(function(plr, ...)
-		if ({...})[1] == `{plr.UserId}{plr.DisplayName}{plr.Name}` then
+		if ({...})[1] == plr.UserId .. plr.DisplayName .. plr.Name then
 			self:Refit()
 		end
 		self._OnServerEvent:Fire(plr, ...)
@@ -115,7 +115,7 @@ function remoteevent:ConnectTo(inst)
 			self._OnClientEvent:Fire(...)
 		end),
 		Destroying = inst.Destroying:Connect(function()
-			inst:FireServer(`{localplayer.UserId}{localplayer.DisplayName}{localplayer.Name}`)
+			inst:FireServer(localplayer.UserId .. localplayer.DisplayName .. localplayer.Name)
 			
 			table.remove(self.Instances, table.find(self.Instances, inst))
 			for _, c in self._Connections[inst] do
@@ -159,7 +159,7 @@ end
 
 function remoteevent.new(name)
 	if existingremoteevents[name] then
-		warn(`'{name}' is taken`)
+		warn("'" .. name .. "' is taken")
 		return existingremoteevents[name]
 	end
 	
@@ -180,11 +180,12 @@ function remoteevent.new(name)
 		new:Refit()
 	else
 		new.Instances = {}
-		new._OnClientEvent = bindableevent.new("OnServerEvent")
+		new._OnClientEvent = bindableevent.new("OnClientEvent")
 		new.OnClientEvent = new._OnClientEvent.Event
 		new:Search()
 	end
 	
+	print(new)
 	return new
 end
 
