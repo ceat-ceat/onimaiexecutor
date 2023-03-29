@@ -1,6 +1,8 @@
 # onimaiexecutor
 
-this will work as long as you have serverside access to the game as this is an antilogger for script builders
+coregui executor for script builders
+
+this will work as long as you have serverside access
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ceat-ceat/onimaiexecutor/main/client/main.lua", true))()
