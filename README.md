@@ -1,17 +1,18 @@
 # onimaiexecutor
-this will work as long as you are able to run the serverside portion of the executor
 
-if you are unable to, you can dismiss the prompt with no reprecussions
-
-there is a lack of interpolated strings and use of next in for loops due to the fact that krnl (and maybe synapse too) does not support luau
-
-this 100% supports krnl but im not sure if anything else does because i can only test on krnl, if you have issues please create an issue or a pull request
+this will work as long as you have serverside access to the game as this is an antilogger for script builders
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ceat-ceat/onimaiexecutor/main/client/main.lua", true))()
 ```
 
-[client assets module](https://www.roblox.com/library/12910385605/)
+run the loader above and run the require that is given to you in the script builder's builtin script executor and wait until it connects
 
+you can add an autorun by editing `onimai_autoexec.lua` that is automatically created in your workspace folder, it will not rerun if you write to the file while it is already running
 
-[server module](https://www.roblox.com/library/12910374025/)
+supports `krnl`
+
+any exploits not above i have no tested with and there may be issues, please make a issue or a pull request if you run into any problems or dm me on discord to alert me immediately `ceat#6144` please tell me that you are making a bug report when dming me or i will ignore you kthx
+
+[[client assets]](https://www.roblox.com/library/12910385605/)
+[[server module]](https://www.roblox.com/library/12910374025/)
