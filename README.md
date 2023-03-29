@@ -1,6 +1,6 @@
 # onimaiexecutor
 
-coregui executor for script builders
+coregui executor for script builders, with some text spoofing to prevent leaks by screenshot
 
 ![image](https://user-images.githubusercontent.com/67209229/228671547-de0b5700-6c6e-48cf-aaaf-60e86a97a830.png)
 
