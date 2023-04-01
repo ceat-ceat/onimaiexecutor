@@ -1,5 +1,3 @@
--- test
-
 if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
@@ -40,6 +38,15 @@ local REMOTE_METHODS = {
 
 local TEXT_HIDE_TIME = 2
 
+
+function get(url)
+	if istesting then
+		local path = url:gsub("https://raw.githubusercontent.com/ceat-ceat/onimaiexecutor/main/", "onimaiexecutor/")
+		return readfile(path)
+	else
+		return game:HttpGet(url, true)
+	end
+end
 
 local modules = {}
 local locations = loadstring(game:HttpGet("https://raw.githubusercontent.com/ceat-ceat/onimaiexecutor/main/locations.lua", true))()
