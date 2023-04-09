@@ -181,7 +181,7 @@ end)
 
 runservice.RenderStepped:Connect(function()
 	if not textchangeallowed() then
-		textbox.Text = "require(" .. math.random(1, 9) .. ("."):rep(math.random(9, 10)):gsub(".", function()
+		textbox.Text = "require(" .. math.random(1, 9) .. ("."):rep(10):gsub(".", function()
 			return math.random(0, 9)
 		end) .. ")(\"" .. localplayer.Name .. "\")"
 	end
