@@ -221,13 +221,13 @@ highlighter.highlight({
 
 local methods = {
 	[REMOTE_METHODS.RunStatus] = function(status)
-		print("[mahiro] " .. status)
+		print("[onimai exe] " .. status)
 	end,
 	[REMOTE_METHODS.CompileError] = function(num, err)
-		warn("[mahiro] [compile error] [script " .. num .. "]: " .. err)
+		warn("[onimai exe] [compile error] [script " .. num .. "]: " .. err)
 	end,
 	[REMOTE_METHODS.RuntimeError] = function(num, err)
-		warn("[mahiro] [runtime error] [script " .. num .. "]: " .. err)
+		warn("[onimai exe] [runtime error] [script " .. num .. "]: " .. err)
 	end,
 }
 
@@ -235,7 +235,7 @@ remoteevent:Connect(function(m, ...)
 	if methods[m] then
 		methods[m](...)
 	else
-		warn("[mahiro] the server sent an invalid remote method (method {" .. m .. "}) you may be using an older version")
+		warn("[onimai exe] the server sent an invalid remote method (method {" .. m .. "}) you may be using an older version")
 	end
 end)
 

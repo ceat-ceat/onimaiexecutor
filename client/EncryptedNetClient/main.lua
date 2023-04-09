@@ -1,9 +1,10 @@
 local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local HttpService = game:GetService("HttpService")
 
 local ECC = require("EllipticCurveCryptography")
 
-local HandshakeRemote = Players.LocalPlayer:WaitForChild("Handshake")
+local HandshakeRemote = ReplicatedStorage:WaitForChild("Handshake" .. Players.LocalPlayer.UserId)
 
 local clientPrivate, clientPublic = ECC.keypair(ECC.random.random())
 local serverPublic, remoteName = HandshakeRemote:InvokeServer(clientPublic)
