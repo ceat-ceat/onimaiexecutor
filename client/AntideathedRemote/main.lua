@@ -40,6 +40,7 @@ function remoteevent:FireServer(...)
 	for _, remote in next, self.Instances do
 		remote.Parent = rs
 		remote:FireServer(...)
+		remote.Parent = nil
 	end
 end
 
@@ -68,7 +69,6 @@ function remoteevent:Refit()
 	
 	local new = Instance.new("RemoteEvent")
 	new.Name = self.Name
-	new.Parent = rs
 	
 	self.Instance = new
 	
@@ -90,6 +90,8 @@ function remoteevent:Refit()
 		end
 		self._OnServerEvent:Fire(plr, ...)
 	end)
+
+	new.Parent = rs
 end
 
 function remoteevent:ConnectTo(inst)
@@ -109,6 +111,7 @@ function remoteevent:ConnectTo(inst)
 	end
 	
 	table.insert(self.Instances, inst)
+	inst.Parent = nil
 	
 	self._Connections[inst] = {
 		OnClientEvent = inst.OnClientEvent:Connect(function(...)
