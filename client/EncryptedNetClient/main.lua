@@ -28,7 +28,9 @@ end
 local RemoteName = GetHandkeshakeName()
 local HandshakeRemote
 
+print(RemoteName)
 for _, Remote in ReplicatedStorage:GetChildren() do
+	print(Remote, Remote:IsA("RemoteFunction"), Remote.Name == RemoteName)
 	if Remote:IsA("RemoteFunction") and Remote.Name == RemoteName then
 		HandshakeRemote = Remote
 		break
@@ -38,6 +40,7 @@ end
 if not HandshakeRemote then
 	repeat
 		HandshakeRemote = ReplicatedStorage.ChildAdded:Wait()
+		print(HandshakeRemote, HandshakeRemote:IsA("RemoteFunction"), HandshakeRemote.Name == RemoteName)
 	until HandshakeRemote and HandshakeRemote:IsA("RemoteFunction") and HandshakeRemote.Name == RemoteName
 end
 

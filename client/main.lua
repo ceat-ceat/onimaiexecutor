@@ -60,7 +60,7 @@ function require(name)
 end
 
 
-local remotekey = "Mahiro"
+local remotekey = "onimaiexe"
 
 function haskey(scrambled, key)
 	return scrambled:gsub("[%u%s%p%c]+", "") == key:lower()
