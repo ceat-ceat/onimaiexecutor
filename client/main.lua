@@ -238,5 +238,5 @@ local ok, autorun = pcall(readfile, "onimai_autoexec.lua")
 if ok then
 	remoteevent:SendToServer(REMOTE_METHODS.Run, autorun)
 else
-	pcall(writefile,"onimai_autoexec.lua", "")
+	pcall(writefile, "onimai_autoexec.lua", "")
 end
