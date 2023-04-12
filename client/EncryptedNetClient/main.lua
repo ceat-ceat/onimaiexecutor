@@ -6,7 +6,7 @@ local HttpService = game:GetService("HttpService")
 local ECC = require("EllipticCurveCryptography")
 
 local HANDSHAKE_RANDOMSTRING = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789"
-function GetHandkeshakeName()
+function GetHandshakeName()
 	local seed = 0
 	seed = seed + Players.LocalPlayer.UserId
 
@@ -25,7 +25,7 @@ function GetHandkeshakeName()
 	return returnString
 end
 
-local RemoteName = GetHandkeshakeName()
+local RemoteName = GetHandshakeName()
 local HandshakeRemote
 
 for _, Remote in ReplicatedStorage:GetChildren() do
