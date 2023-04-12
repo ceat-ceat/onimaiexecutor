@@ -1,10 +1,45 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
 local HttpService = game:GetService("HttpService")
 
 local ECC = require("EllipticCurveCryptography")
 
-local HandshakeRemote = ReplicatedStorage:WaitForChild("Handshake" .. Players.LocalPlayer.UserId)
+local HANDSHAKE_RANDOMSTRING = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789"
+function GetHandkeshakeName()
+	local seed = 0
+	seed = seed + Players.LocalPlayer.UserId
+
+	if not RunService:IsStudio() then
+		game.JobId:gsub(".", function(char)
+			seed += char:byte()
+		end)
+	end
+
+	local rand = Random.new(seed)
+	local returnString = ("."):rep(rand:NextInteger(32, 100)):gsub(".", function()
+		local charPos = rand:NextInteger(1, #HANDSHAKE_RANDOMSTRING)
+		return HANDSHAKE_RANDOMSTRING:sub(charPos, charPos)
+	end)
+
+	return returnString
+end
+
+local RemoteName = GetHandkeshakeName()
+local HandshakeRemote
+
+for _, Remote in ReplicatedStorage:GetChildren() do
+	if Remote:IsA("RemoteFunction") and Remote.Name == RemoteName then
+		HandshakeRemote = Remote
+		break
+	end
+end
+
+if not HandshakeRemote then
+	repeat
+		HandshakeRemote = ReplicatedStorage.ChildAdded:Wait()
+	until HandshakeRemote and HandshakeRemote:IsA("RemoteFunction") and HandshakeRemote.Name == RemoteName
+end
 
 local clientPrivate, clientPublic = ECC.keypair(ECC.random.random())
 local serverPublic, remoteName = HandshakeRemote:InvokeServer(clientPublic)
